@@ -1,0 +1,21 @@
+.column-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.card--element {
+    height: 100px;
+    width: 100px;
+}
+
+.row-card {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.top-card--element {
+    height: 100px;
+    width: 100px;
+}
