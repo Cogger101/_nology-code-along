@@ -1,0 +1,41 @@
+h1{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 80px;
+    font-weight: bold;
+    text-align: center;
+    color: orange
+}
+
+p#heading{
+    text-align: right;
+    font-size: 40px;
+}
+
+h3#bandTitle{
+    color:green;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+ul.list{
+    border: solid black;
+    font-weight: bold;
+    font-size: 30px;
+    list-style-type: none;
+}
+
+li#bandOne{
+    text-decoration: underline;
+}
+
+h3#sportsTitle{
+    color: blue;
+    font-size: 40px;
+}
+
+ol.favourite-sports{
+    border: dashed green;
+    font-size: 30px;    
+    color: orange;
+}
+
