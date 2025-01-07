@@ -1,0 +1,14 @@
+div {
+    background-color: greenyellow;
+    padding: 20px 0px;
+    border: 2px solid orange;
+}
+
+.card {
+    background-color: hotpink;
+    padding-left: 20px;
+}
+
+.card > p {
+    padding-left: 40px;
+}
