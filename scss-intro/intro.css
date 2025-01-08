@@ -1,3 +1,31 @@
-p {
-  background-color: aqua;
+/* SCSS HEX */
+/* SCSS HSL */
+/* SCSS RGB */
+/* SCSS Gradient */
+h1 {
+  display: flex;
+  background-color: rgb(33, 78, 52);
+  border: 2px black dashed;
+}
+
+.btn {
+  background-color: rgb(223, 248, 235);
+  width: 200px;
+  height: 100px;
+}
+.btn--primary {
+  font-size: larger;
+}
+.btn--secondary {
+  color: purple;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.btn--urgent {
+  background-color: rgb(205, 205, 205);
+  border: red solid 10px;
+  text-decoration: underline;
+  color: rgb(1, 22, 56);
 }
