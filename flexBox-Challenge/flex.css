@@ -1,21 +1,61 @@
-.column-card {
+#border {
+    border: solid black 2px;
+    width: 600px;
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-evenly;
-}
-.card--element {
-    height: 100px;
-    width: 100px;
+    flex-direction: column-reverse;
 }
 
 .row-card {
     display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: space-evenly;
+    flex-direction: row-reverse;
 }
 
-.top-card--element {
+.card {
+    display: flex;
     height: 100px;
     width: 100px;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+#card1 {
+    background-color: aqua;
+    margin: 10px;
+}
+#card2 {
+    background-color: blue;
+    margin: 10px;
+}
+#card3 {
+    background-color: yellow;
+    margin: 10px;
+    text-align: center;
+}
+#card4 {
+    background-color: green;
+    margin: 10px;
+    text-align: center;
+}
+#card5 {
+    background-color: brown;
+    margin: 10px;
+    text-align: center;
+}
+#card6 {
+    background-color: bisque;
+    margin: 10px;
+    text-align: center;
+}
+#card7 {
+    background-color: red;
+    margin: 10px;
+    text-align: center;
+}
+#card8 {
+    background-color: orange;
+    margin: 10px;
+    text-align: center;
 }
