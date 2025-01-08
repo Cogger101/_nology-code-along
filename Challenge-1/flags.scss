@@ -4,12 +4,8 @@ body {
     flex-direction: column;
     height: 100vh;
 }
-.stripe {
-    flex: 1;
-    width: 100%;
-}
 
-@media screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
     .stripe1 {
         background-color: black;
     }
@@ -20,9 +16,9 @@ body {
         background-color: yellow;
     }
 }
-@media screen and (min-width: 601px) and (max-width: 900px) {
+@media only screen and (min-width: 601px) and (max-width: 900px) {
     body {
-        flex-direction: row;
+        display: flex;
     }
     .stripe1 {
         background-color: black;
@@ -34,9 +30,9 @@ body {
         background-color: red;
     }
 }
-@media screen and (min-width: 901px) {
+@media only screen and (min-width: 901px) {
     body {
-        flex-direction: row;
+        display: flex;
     }
     .stripe1 {
         background-color: green;
