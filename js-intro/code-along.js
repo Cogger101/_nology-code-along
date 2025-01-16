@@ -25,6 +25,10 @@ const sum = (n) => {
     }
     return start;
 };
-console.log(sum(10));
+// console.log(sum(10));
 
-console.log();
+// --------------------------------------------------------------------------------------------------------
+
+const arr1 = [1, 3, 5, 7, 9];
+const newArr1 = arr1.map((num) => num - 1);
+console.log(newArr1);
