@@ -132,12 +132,31 @@ const garfield: Cat = {
 
 console.log("Garfield =>", garfield);
 
-// Using the spread operator - copies all the key value pairs inside the new object
+// // Using the spread operator - copies all the key value pairs inside the new object
 
 const newCat = { ...garfield };
 console.log(newCat);
 newCat.isAnnoying = false;
 //  newCat.name = 'Jonny'; does not follow the Animal / Cat interface
 console.log("newCat", newCat);
+
+// // How to access all the KEY/Value pairs - properties in an object?
+
+const allKeys = Object.keys(garfield);
+console.log(allKeys);
+
+const allValues = Object.values(garfield);
+console.log(allValues);
+
+const allEntries = Object.entries(garfield);
+console.log(allEntries);
+
+console.log("Key:", allEntries[0][0]);
+console.log("Value:", allEntries[0][1]);
+
+// Destructuring
+
+const { species, age } = garfield;
+console.log(species, age);
 
 // JSON = JavaScript Object Notation
