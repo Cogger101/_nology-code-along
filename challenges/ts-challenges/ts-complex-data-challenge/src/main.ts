@@ -14,7 +14,7 @@ if (!companiesBtn) {
     throw new Error("Can't find element");
 }
 
-function renderCompanies(companies: Company[]) {
+const renderCompanies = (companies: Company[]) => {
     if (!companiesContainer) {
         throw new Error("Can't find element");
     }
@@ -28,8 +28,22 @@ function renderCompanies(companies: Company[]) {
         <p>End: ${company.end}</p>`;
         companiesContainer.appendChild(companyCard);
     });
-}
+};
 
 companiesBtn.addEventListener("click", () => {
     renderCompanies(companies);
 });
+
+// const handleRender = () => {
+// companiesContainer.innerHTML = ""
+//     companies.forEach(({name, industry, start, end})=>{
+//         `<div>
+//         <h2>${name}</h2>
+//         <p>${industry}</p>
+//         <p>${start}</p>
+//         <p>${end}</p>
+//         </div>`;
+//     })
+// }
+
+// companiesBtn.addEventListener('click', handleRender)
