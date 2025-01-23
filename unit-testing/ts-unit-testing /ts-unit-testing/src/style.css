@@ -3,7 +3,7 @@
     text-align: center;
 }
 
-#food-container {
+#foodContainer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 50px;

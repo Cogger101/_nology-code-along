@@ -1,18 +1,18 @@
-import './../style.css';
+import "./../style.css";
 // Imports
 
-import { FoodType } from './Food';
-import foodData from './foodData';
-import { filterFoodByType, generateFoodHTML } from './foodUtilities.ts';
+import { FoodType } from "./Food";
+import foodData from "./foodData";
+import { filterFoodByType, generateFoodHTML } from "./foodUtilities";
 
 // HTML Elements
-const form = document.querySelector<HTMLFormElement>('#food-form');
-const sortBy = document.querySelector<HTMLSelectElement>('#sort-food');
-const foodContainer = document.querySelector<HTMLElement>('#food-container');
+const form = document.querySelector<HTMLFormElement>("#food-form");
+const sortBy = document.querySelector<HTMLSelectElement>("#sort-food");
+const foodContainer = document.querySelector<HTMLElement>("#foodContainer");
 
 if (!form || !sortBy || !foodContainer) {
     throw new Error(
-        `There's an issue with the selector from any that are null: \nform: ${form}\nsortBy: ${sortBy}\nfoodContainer: ${foodContainer}`,
+        `There's an issue with the selector from any that are null: \nform: ${form}\nsortBy: ${sortBy}\nfoodContainer: ${foodContainer}`
     );
 }
 
@@ -37,7 +37,7 @@ const submitForm = (event: SubmitEvent) => {
 };
 
 // Event Listeners
-form.addEventListener('submit', submitForm);
+form.addEventListener("submit", submitForm);
 
 // Starting Logic
 foodContainer.innerHTML = generateFoodHTML(foodData);
