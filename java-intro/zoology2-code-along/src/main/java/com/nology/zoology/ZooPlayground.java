@@ -38,16 +38,16 @@ public class ZooPlayground {
         for (int i = 0; i <13; i++){
             switch (random.nextInt(4)){
                 case 0:
-                    myZoo.addAnimal(new Lion(AnimalUtils.nextUniqueId(), generateName(), generateRandomAge(), true));
+                    myZoo.addAnimal(new Lion(nextUniqueId(), generateName(), generateRandomAge(), true));
                     break;
                 case 1:
-                    myZoo.addAnimal(new Tiger(AnimalUtils.nextUniqueId(), generateName(), generateRandomAge()));
+                    myZoo.addAnimal(new Tiger(nextUniqueId(), generateName(), generateRandomAge()));
                     break;
                 case 2:
-                    myZoo.addAnimal(new Llama(AnimalUtils.nextUniqueId(), generateName(), generateRandomAge()));
+                    myZoo.addAnimal(new Llama(nextUniqueId(), generateName(), generateRandomAge()));
                     break;
                 case 3:
-                    myZoo.addAnimal(new Crocodile(AnimalUtils.nextUniqueId(), generateName(), generateRandomAge()));
+                    myZoo.addAnimal(new Crocodile(nextUniqueId(), generateName(), generateRandomAge()));
                     break;
             }
         }
