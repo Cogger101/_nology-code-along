@@ -25,6 +25,11 @@ public class RelationalFun {
         System.out.println("yourAge == bobsAge?: " + ageCompare);
 
         boolean nameCompare =  myName.equals(yourName);
-        System.out.println(nameCompare);
+        System.out.println("do names match: " + nameCompare);
+
+        int currentAge = 30;
+        boolean isGreater21 = currentAge >= 21;
+        System.out.println("my age compared to 21: " + isGreater21);
+
     }
 }

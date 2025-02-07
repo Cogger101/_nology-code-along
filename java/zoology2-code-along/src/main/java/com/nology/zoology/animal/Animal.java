@@ -4,6 +4,7 @@ public class Animal {
     private int id;
     protected String name;
     protected int age;
+    protected boolean isPettable;
     protected short hunger = 50;
     private static final int HUNGER_LEVEL = 40;
 
@@ -14,6 +15,7 @@ public class Animal {
         this.id = id;
         this.name = name;
         this.age = age;
+        this.isPettable = getType().isPettable();
     }
 
     public int getId() {
@@ -67,9 +69,15 @@ public class Animal {
         return "";
     }
 
+    public AnimalType getType() {
+        return null;
+    }
+
     @Override
     public String toString() {
         return getClass().getSimpleName() + String.format("[id=%s, name=%s, " +
                 "age=%d]", this.id, this.name, this.age);
     }
 }
+
+
