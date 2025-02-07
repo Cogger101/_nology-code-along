@@ -53,9 +53,6 @@ public class Proj2_2_MadLibsClone {
         System.out.println("There once was a " + adjective1 + " girl named " + girlName + " who was a " + adjective2 + " " + occupation + " in the kingdom of " + nameOfPlace + ".\n" +
                 "She loved to wear " + clothing + " and to " + hobby + ". She wanted to marry the " + adjective3 + " " + occupation2 + " named " + boyName + " but her father, King " + manName + " forbid her from seeing him.");
 
-
-
-
     }
 
 
