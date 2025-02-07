@@ -21,10 +21,6 @@ public class Zoo {
     private final ArrayList<Animal> animals = new ArrayList<>();
 
 //Polymorphism - Method overloading
-    public void addAnimal(Lion lion) {
-    this.animals.add(lion);
-}
-
     public void addAnimal(Tiger tiger) {
         this.animals.add(tiger);
     }
@@ -36,6 +32,12 @@ public class Zoo {
     public void addAnimal(Llama llama) {
         this.animals.add(llama);
     }
+
+    public void addAnimal(Lion lion) {
+        this.animals.add(lion);
+    }
+
+
 
     public int getAnimalCount() {
         return this.animals.size();
@@ -50,4 +52,6 @@ public class Zoo {
     public void shutdownZoo() {
         System.out.println("Zoo shutdown");
     }
+
+
 }

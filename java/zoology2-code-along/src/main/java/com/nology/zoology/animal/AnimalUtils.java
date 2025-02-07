@@ -4,9 +4,25 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class AnimalUtils {
-
+//1. Animal utilities
+//
+//    In the"AnimalUtils"class
+//    add a"static"
+//    ArrayList to hold possible animal names
+//    populate the list in a"static"block - see examples
+//    add method generateName() to return a random name from the list
+//    add method generateAge() to return a random age"between"1 and 15
+//
+//
+//    In the main method of the"ZooPlayground"class:
+//    modify how the animals are created using the new AnimalUtil methods
+//😃 this should simplify the process
+//    Extension
+//    Using the new methods can you generate a"random"number of animals for the zoo
     private static int nextId = 0;
-    public static Random random = new Random();
+    private static final Random RANDOM = new Random();
+    private static ArrayList<String> names = new ArrayList<>();
+
 
     // We want to be able to use this method without have to instantiate the
     // AnimalUtils class.
@@ -14,19 +30,19 @@ public class AnimalUtils {
         return ++nextId;
     }
 
-    private static final ArrayList<String> names = new ArrayList<>();
-
-    public static String generateName(){
-        return names.get((random.nextInt(names.size())));
+    public static String generateName() {
+        return names.get(RANDOM.nextInt(names.size()));
     }
 
-    public static int generateRandomAge(){
-        return 1 + random.nextInt(15);
+    public static int generateAge() {
+        return 1 + RANDOM.nextInt(15);
     }
-
 
     static {
         names.add("Abbie");
+        names.add("Kuzco");
+        names.add("Tony");
+        names.add("Krok");
         names.add("Alfred");
         names.add("Beth");
         names.add("Bob");
@@ -56,7 +72,4 @@ public class AnimalUtils {
         names.add("Sydney");
         names.add("Tiddles");
     }
-
-
 }
-
