@@ -45,6 +45,17 @@ public class Main {
 
         Duck anotherDuck =  (Duck) flier;
 
+        Farm newFarm = new Farm();
+
+
+
+        System.out.println("new farm get animals" + newFarm.getAnimals());
+        System.out.println(newFarm.getAnimalsThatMakeSound());
+        System.out.println("Animals that can fly" + newFarm.getAnimalsThatCanFly());
+        System.out.println("Animals that can fly and make sound" +  newFarm.getAnimalsThatCanFLyAndMakeSound());
+
+
+
     }
 
 }
