@@ -1,8 +1,6 @@
 package com.nology.zoology.animal;
 
-import org.junit.jupiter.api.*;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 //Animal JUnit test
 //
@@ -14,6 +12,10 @@ import static org.junit.jupiter.api.Assertions.*;
 //add tests for the name and age getters and setters
 //
 //Should we be writing tests for Tiger, Llama and the res
+
+import org.junit.jupiter.api.*;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 class AnimalTest {
     private static final int ANIMAL_ID = 99;
@@ -32,7 +34,7 @@ class AnimalTest {
     @BeforeEach
     void setUp() {
         System.out.println("Creating a new Animal");
-        this.animal = new Animal(ANIMAL_ID, ANIMAL_NAME, ANIMAL_AGE);
+        this.animal = new Lion(ANIMAL_ID, ANIMAL_NAME, ANIMAL_AGE);
     }
 
     @AfterEach
@@ -91,4 +93,36 @@ class AnimalTest {
         animal.feed();
         assertEquals(40, animal.getHunger());
     }
+
+    @Test
+    @DisplayName("Throws Illegal Argument exception when name is equal to null or left empty")
+    void constructor_NoValidName_ThrowsException(){
+
+        assertThrows(IllegalArgumentException.class, () ->
+               animal.setName(""), "Name cannot be on empty string");
+        assertThrows(IllegalArgumentException.class, () ->
+                animal.setName(null), "Name cannot be null");
+    }
+    @Test
+    @DisplayName("Throws Illegal Argument exception when age is less that 1")
+    void constructor_NoValidAgeLessThan1_ThrowsException(){
+
+        assertThrows(IllegalArgumentException.class, () ->
+                animal.setAge(-1), "Age cannot be less than 1");
+    }
+    @Test
+    @DisplayName("Throws Illegal Argument exception when age is more than 99")
+    void constructor_NoValidAgeMoreThan99_ThrowsException(){
+
+        assertThrows(IllegalArgumentException.class, () ->
+                animal.setAge(100), "Age cannot be more than 99");
+    }
+    @Test
+    @DisplayName("Throws Exception when hunger is less than 0")
+    void setHunger_HungerLessThan0_ThrowsException(){
+        assertThrows(IllegalArgumentException.class, () ->
+                animal.setHunger((short) -1), "Hunger cannot be less than 0");
+    }
+
+
 }
