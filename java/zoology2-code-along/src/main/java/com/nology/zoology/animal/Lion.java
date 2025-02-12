@@ -23,10 +23,8 @@ public class Lion extends Animal {
         System.out.println("Rooaaaaaarrrr!!!!!");
     }
 
-
-@Override
-public AnimalType getType(){
-    return AnimalType.lion;
-}
-
+    @Override
+    public AnimalType getType() {
+        return AnimalType.lion;
+    }
 }

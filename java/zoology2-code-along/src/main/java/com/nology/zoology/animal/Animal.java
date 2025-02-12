@@ -1,6 +1,6 @@
 package com.nology.zoology.animal;
 
-public class Animal {
+public abstract class Animal implements Comparable<Animal> {
     private int id;
     protected String name;
     protected int age;
@@ -46,6 +46,7 @@ public class Animal {
         return hunger;
     }
 
+
     public void setHunger(short hunger) {
         this.hunger = hunger;
     }
@@ -59,18 +60,22 @@ public class Animal {
         makeSound();
     }
 
-
-
-    public void makeSound() {
-        System.out.println("They say nothing ...");
-    }
-
-    public String getInformation() {
-        return "";
-    }
+    public abstract void makeSound();
+    public abstract String getInformation();
 
     public AnimalType getType() {
         return null;
+    }
+
+    @Override
+    public int compareTo(Animal other) {
+        // We want to compare the ID - object is ID current Object.id to
+        // otherObject.id
+        // -1 - current id is smaller than other id
+        // 0 IDs are the same
+        // +1 current ID is greater than other id
+
+        return this.id - other.id;
     }
 
     @Override
@@ -79,5 +84,3 @@ public class Animal {
                 "age=%d]", this.id, this.name, this.age);
     }
 }
-
-

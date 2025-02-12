@@ -19,7 +19,7 @@ public class Crocodile extends Animal{
     }
 
     @Override
-    public AnimalType getType(){
+    public AnimalType getType() {
         return AnimalType.crocodile;
     }
 //    +++++++++++++

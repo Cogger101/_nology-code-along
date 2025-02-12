@@ -17,9 +17,9 @@ public class Llama extends Animal{
         return String.format("Animal with ID: %d, is called %s, and is %d " +
                 "years old", this.getId(), this.name, this.age);
     }
-@Override
-public AnimalType getType(){
-    return AnimalType.llama;
-}
-}
 
+    @Override
+    public AnimalType getType() {
+        return AnimalType.llama;
+    }
+}

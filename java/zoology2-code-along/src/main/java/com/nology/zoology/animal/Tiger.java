@@ -18,9 +18,9 @@ public class Tiger extends Animal {
         return String.format("Animal with ID: %d, is called %s, and is %d " +
                 "years old", this.getId(), this.name, this.age);
     }
-@Override
-public AnimalType getType(){
-    return AnimalType.tiger;
-}
-}
 
+    @Override
+    public AnimalType getType() {
+        return AnimalType.tiger;
+    }
+}

@@ -1,19 +1,19 @@
 package com.nology.zoology.animal;
 
 public enum AnimalType {
-    crocodile, lion, tiger, llama;
+    crocodile, lion, llama(true), tiger;
     boolean pettable = false;
 
-    AnimalType(){
+
+    AnimalType() {
         this.pettable = false;
     }
 
-    AnimalType(boolean pettable){
+    AnimalType(boolean pettable) {
         this.pettable = pettable;
     }
 
-    public boolean isPettable(){
+    public boolean isPettable() {
         return pettable;
     }
-
 }

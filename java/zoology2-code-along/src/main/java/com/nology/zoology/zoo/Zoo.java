@@ -3,6 +3,8 @@ package com.nology.zoology.zoo;
 import com.nology.zoology.animal.*;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 
 public class Zoo {
@@ -20,7 +22,7 @@ public class Zoo {
 
     private final ArrayList<Animal> animals = new ArrayList<>();
 
-//Polymorphism - Method overloading
+    //Polymorphism - Method overloading
     public void addAnimal(Tiger tiger) {
         this.animals.add(tiger);
     }
@@ -37,17 +39,31 @@ public class Zoo {
         this.animals.add(lion);
     }
 
-
-
     public int getAnimalCount() {
         return this.animals.size();
     }
 
-    public void listAnimals() {
+    public void listAnimals(AnimalSorting animalSorting) {
+        switch (animalSorting) {
+            case byName:
+                animals.sort(new SortAnimalByName());
+                break;
+            case byType:
+                animals.sort(new SortAnimalByType());
+                break;
+            default:
+                Collections.sort(animals);
+        }
         for (Animal animal : animals) {
             System.out.println(animal.getInformation());
         }
     }
+
+
+    public List<Animal> getAllAnimals() {
+        return this.animals;
+    }
+
 
     public void shutdownZoo() {
         System.out.println("Zoo shutdown");

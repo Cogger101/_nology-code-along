@@ -7,6 +7,8 @@ public class VisitorAnimalCommandRunner extends AnimalCommandRunner {
 
     private static final String[] ANIMAL_COMMANDS = {
             "List all animals",
+            "List animal by type",
+            "Visit an animal",
             "Back"
     };
 
@@ -16,7 +18,7 @@ public class VisitorAnimalCommandRunner extends AnimalCommandRunner {
 
     @Override
     protected boolean handleUserSelection(int userSelection) {
-        if( userSelection == this.commands.length ) {
+        if (userSelection == this.commands.length) {
             return false;
         }
 
@@ -24,6 +26,12 @@ public class VisitorAnimalCommandRunner extends AnimalCommandRunner {
         switch (userSelection) {
             case 1:
                 listAllAnimals();
+                break;
+            case 2:
+                listAllAnimalsByType();
+                break;
+            case 3:
+                runSingleAnimalCommands();
                 break;
         }
 
