@@ -1,6 +1,8 @@
 package org.example;
 
+import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,21 +26,32 @@ public class FilePrinter {
      * Constructor, takes the file to print.
      * @param filePath
      */
-    public FilePrinter(String filePath) {
+    public FilePrinter(String filePath) throws IOException{
         this.filePath = filePath;
         this.fileLines = loadFile();
+
     }
 
     /**
      * Get the contents of the file as a {@link List} of Strings.
      * @return
      */
-    private List<String> loadFile() {
+    private List<String> loadFile() throws IOException{
         List<String> lines = new ArrayList<>();
         // uncomment line to start
-//        lines = Files.readAllLines(Paths.get( this.filePath ));
+        try {
+            lines = Files.readAllLines(Paths.get(this.filePath));
+        }
+        catch(NoSuchFileException e){
+            System.err.println("No such file: " + e.getFile());
+            throw e;
+        }catch (IOException e){
+            System.err.printf("Error reading file: %s. %s", this.filePath, e.getMessage());
+            throw e;
+        }
         return lines;
     }
+
 
     /**
      * Print out the file to standard out.
