@@ -60,11 +60,21 @@ public class Zoo {
     public void listAnimals(AnimalSorting animalSorting) {
         switch (animalSorting) {
             case byName:
-                animals.sort(new SortByAnimalName());
-                Collections.shuffle(animals);
+                animals.sort((a, b) ->
+                    a.getName().compareTo(b.getName())
+                );
                 break;
             case byType:
-                animals.sort(new SortByAnimalTypeThenName());
+                animals.sort((a, b) -> {
+                    if (a.getType() == b.getType()) {
+
+                        return a.getName().compareTo(b.getName());
+                    }
+                    return a.getType().toString().compareTo(b.getType().toString());
+                });
+                break;
+            case byPopularity:
+                animals.sort((a, b) -> a.getPopularity() - b.getPopularity());
                 break;
             default:
                 Collections.sort(animals);
@@ -73,6 +83,7 @@ public class Zoo {
             System.out.println(animal.getInformation());
         }
     }
+
 
     /**
      * Return a list of all animals in zoo.
