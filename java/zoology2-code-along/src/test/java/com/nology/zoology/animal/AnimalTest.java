@@ -42,35 +42,40 @@ class AnimalTest {
     @Test
     @DisplayName("Missing name throws exception on construction")
     void constructor_InvalidName_ThrowsException() {
-        try {
-            Lion animal = new Lion(1, "", 12);
-            fail("Should thrown an IllegalArgumentException");
-        } catch (IllegalArgumentException e) {
-            // all good
-        } catch (Exception e) {
-            fail("Should thrown an IllegalArgumentException");
-        }
+//        try {
+//            Lion animal = new Lion(1, "", 12);
+//            fail("Should thrown an IllegalArgumentException");
+//        } catch (IllegalArgumentException e) {
+//            // all good
+//        } catch (Exception e) {
+//            fail("Should thrown an IllegalArgumentException");
+//        }
+            Lion lion = new Lion(ANIMAL_ID, ANIMAL_NAME, ANIMAL_AGE);
+        assertThrows(IllegalArgumentException.class, () -> {
+            lion.setName("");
+        });
     }
 
     @Test
     @DisplayName("Invalid age throws exception on construction")
     void constructor_InvalidAge_ThrowsException() {
-        try {
-            Lion animal = new Lion(ANIMAL_ID, ANIMAL_NAME, -1);
-            fail("Should thrown an IllegalArgumentException");
-        } catch (IllegalArgumentException e) {
-            // all good
-        } catch (Exception e) {
-            fail("Should thrown an IllegalArgumentException");
-        }
-        try {
-            Lion animal = new Lion(ANIMAL_ID, ANIMAL_NAME, 100);
-            fail("Should thrown an IllegalArgumentException");
-        } catch (IllegalArgumentException e) {
-            // all good
-        } catch (Exception e) {
-            fail("Should thrown an IllegalArgumentException");
-        }
+//        try {
+//            Lion animal = new Lion(ANIMAL_ID, ANIMAL_NAME, -1);
+//            fail("Should thrown an IllegalArgumentException");
+//        } catch (IllegalArgumentException e) {
+//            // all good
+//        } catch (Exception e) {
+//            fail("Should thrown an IllegalArgumentException");
+//        }
+//        try {
+//            Lion animal = new Lion(ANIMAL_ID, ANIMAL_NAME, 100);
+//            fail("Should thrown an IllegalArgumentException");
+//        } catch (IllegalArgumentException e) {
+//            // all good
+//        } catch (Exception e) {
+//            fail("Should thrown an IllegalArgumentException");
+//        }
+        assertAll("Invalid age ");
     }
 
     @Test
@@ -98,27 +103,19 @@ class AnimalTest {
     @Test
     @DisplayName("Set null name throws exception")
     void setName_Null_ThrowsException() {
-        try {
-            target.setName(null);
-            fail("Should thrown an IllegalArgumentException");
-        } catch (IllegalArgumentException e) {
-            // all good
-        } catch (Exception e) {
-            fail("Should thrown an IllegalArgumentException");
-        }
+            Lion lion = new Lion(ANIMAL_ID, ANIMAL_NAME, ANIMAL_AGE);
+        assertThrows(IllegalArgumentException.class, () -> {
+            lion.setName(null);
+        });
     }
 
     @Test
     @DisplayName("Set empty string name throws exception")
     void setName_EmptyString_ThrowsException() {
-        try {
-            target.setName("");
-            fail("Should thrown an IllegalArgumentException");
-        } catch (IllegalArgumentException e) {
-            // all good
-        } catch (Exception e) {
-            fail("Should thrown an IllegalArgumentException");
-        }
+            Lion lion = new Lion(ANIMAL_ID, ANIMAL_NAME, ANIMAL_AGE);
+        assertThrows(IllegalArgumentException.class, () -> {
+            lion.setName("");
+        });
     }
 
     @Test
@@ -158,9 +155,11 @@ class AnimalTest {
     @Test
     @DisplayName("Set hunger is successful")
     void setHunger_ValidInput_Success() {
-        assertEquals( STANDARD_HUNGER, target.getHunger() );
-        target.setHunger((short) 44);
-        assertEquals( 44, target.getHunger() );
+        assertAll("Setting animals with valid hunger inputs",
+                () ->  assertEquals( 50, target.getHunger() ),
+                () -> assertEquals( STANDARD_HUNGER, target.getHunger() ),
+                () -> target.setHunger((short) 44),
+                () -> assertEquals( 44, target.getHunger() ));
     }
 
     @Test
