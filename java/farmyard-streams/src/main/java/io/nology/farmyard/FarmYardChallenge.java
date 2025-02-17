@@ -1,7 +1,9 @@
 package io.nology.farmyard;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class FarmYardChallenge {
 
@@ -18,7 +20,8 @@ public class FarmYardChallenge {
      * @return the total number of animals in the farm yard
      */
     public int getAnimalCount() {
-        return -1;
+        return (int) this.animals.stream().count();
+//        animals.size();
     }
 
     /**
@@ -26,7 +29,7 @@ public class FarmYardChallenge {
      * @return
      */
     public int getCowCount() {
-        return -1;
+        return (int) this.animals.stream().filter(animal -> animal.getType() == AnimalType.cow).count();
     }
 
     /**
@@ -35,7 +38,7 @@ public class FarmYardChallenge {
      * @return
      */
     public int getAnimalCountForType(AnimalType type) {
-        return -1;
+        return (int) this.animals.stream().filter(animal -> animal.getType() == type).count();
     }
 
     /**
@@ -44,7 +47,8 @@ public class FarmYardChallenge {
      * @return
      */
     public int getAnimalsWithNameBeginningWith(String prefix) {
-        return -1;
+      return (int) this.animals.stream().filter(animal -> animal.getName().toLowerCase().startsWith(prefix.toLowerCase()))
+             .count();
     }
 
     /**
@@ -52,7 +56,8 @@ public class FarmYardChallenge {
      * @return
      */
     public Animal getYoungestAnimal() {
-        return null;
+        return animals.stream().sorted((a,b) -> b.getAge()).findFirst().orElse(null);
+//        return (int) this.animals.stream().map(animal -> animal.getAge()).min();
     }
 
     /**
@@ -60,7 +65,7 @@ public class FarmYardChallenge {
      * @return
      */
     public Animal getOldestAnimal() {
-        return null;
+        return animals.stream().max((a,b)-> Integer.compare(a.getAge() , b.getAge())).orElse(null);
     }
 
     /**
@@ -69,7 +74,8 @@ public class FarmYardChallenge {
      * @return
      */
     public List<Animal> getOldestAnimals() {
-        return null;
+        int oldestAge = this.getOldestAnimal().getAge();
+        return animals.stream().filter(animal -> animal.getAge() == oldestAge).collect(Collectors.toList());
     }
 
     /**
@@ -79,15 +85,23 @@ public class FarmYardChallenge {
      * @return
      */
     public List<Animal> getAnimalsForType(AnimalType type) {
-        return null;
+       return animals.stream().filter(animal -> animal.getType() == type).sorted((a,b) -> a.getName().compareTo(b.getName())).toList();
+
+//        List<Animal> typeList = new ArrayList<>();
+//        typeList = animals.stream().filter(animal -> animal.getType() == type).toList();
+//        typeList.stream().sorted((a,b)-> a.getName().compareTo(b.getName()));
+//        return typeList;
+
     }
 
     public Map<AnimalType, Long> getCountsOfAnimalsByType() {
-        return null;
+        return animals.stream()
+                .collect(Collectors.groupingBy((animal -> animal.getType()), Collectors.counting()));
     }
 
     public Map<AnimalType, List<Animal>> getMapOfAnimalsByType() {
-        return null;
+        return animals.stream().sorted((a,b) -> a.getName().compareTo(b.getName()))
+                .collect(Collectors.groupingBy((animal -> animal.getType())));
     }
 
 }

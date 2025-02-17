@@ -8,6 +8,7 @@ public class Main {
 
     private static FarmYard farmYard = new FarmYard();
     static List<Animal> animals = new ArrayList<>(farmYard.getAnimals());
+    static FarmYardChallenge farmChallenge = new FarmYardChallenge();
 
     public static void main(String[] args) {
 ////        How to print out each animal
@@ -30,6 +31,9 @@ public class Main {
         animals.sort((a, b) -> a.getAge() - b.getAge());
         System.out.println("After sorting by age");
         animals.forEach(System.out::println);
+
+//        System.out.println(farmChallenge.getCowCount());
+//        System.out.println(farmChallenge.getAnimalCountForType());
     }
 
 }
