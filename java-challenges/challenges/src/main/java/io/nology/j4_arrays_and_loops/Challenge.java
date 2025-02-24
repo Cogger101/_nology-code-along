@@ -1,5 +1,7 @@
 package io.nology.j4_arrays_and_loops;
 
+import java.util.Arrays;
+
 public class Challenge {
 
     public Challenge() {
@@ -17,7 +19,12 @@ public class Challenge {
      * @return true if the strings are anagrams, false otherwise
      */
     public boolean areAnagrams(String str1, String str2) {
-        return false;
+
+        char[] firstStr = str1.toCharArray();
+        char[] secondStr = str2.toCharArray();
+        Arrays.sort(firstStr);
+        Arrays.sort(secondStr);
+        return Arrays.equals(firstStr, secondStr);
     }
 
     /**

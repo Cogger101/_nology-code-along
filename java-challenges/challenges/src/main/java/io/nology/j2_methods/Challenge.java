@@ -14,7 +14,13 @@ public class Challenge {
      * @return the smallest of the three numbers
      */
     public int findSmallestNumber(int num1, int num2, int num3) {
-        return 1;
+        if(num1 <= num2 && num1 <= num3){
+            return num1;
+        } else if (num2 <= num1 && num2 <= num3) {
+            return num2;
+        }else{
+            return num3;
+    }
     }
 
     /**
@@ -29,7 +35,24 @@ public class Challenge {
      * @return true if the password is valid, otherwise false
      */
     public boolean isValidPassword(String password) {
-        return true;
+        if (password.length() < 10){
+        return false;
     }
+        int digit = 0;
+
+        for (int i = 0; i < password.length(); i++){
+            char element = password.charAt(i);
+
+            if (Character.isDigit(element)){
+                digit++;
+            }
+            if (!Character.isLetterOrDigit(element)){
+                return false;
+            }
+        }
+         return digit >= 2;
+
+        }
+
 
 }
