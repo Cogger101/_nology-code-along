@@ -34,10 +34,21 @@ public class Challenge {
      * @param end   the ending character (P)
      * @return returns all the characters between the start and end
      *         (`ABCDEFGHIJKLMNOP`)
-     * 
+     *
      */
     public void printCharactersBetween(char start, char end) {
-        return;
+        if (start < end){
+        for (char c = start; c<= end; c++) {
+            System.out.print(c);
+        }
+
+        } else if (start > end){
+            for (char c = start; c>= end; c--) {
+                System.out.print(c);
+            }
+        } else {
+            System.out.print(start);
+        }
     }
 
     /***

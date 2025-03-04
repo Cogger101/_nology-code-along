@@ -80,7 +80,7 @@ public class ChallengeTest {
 
         challenge.printCharactersBetween('A', 'P');
 
-        String expectedOutput = "ABCDEFGHIJKLMNOP";
+        String expectedOutput = "ABCDEFGHIJKLMNOP\n";
         assertEquals(expectedOutput, outputStream.toString());
     }
 
