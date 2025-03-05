@@ -1,6 +1,7 @@
 package io.nology.j4_arrays_and_loops;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Challenge {
 
@@ -41,6 +42,7 @@ public class Challenge {
         for (char c = start; c<= end; c++) {
             System.out.print(c);
         }
+            System.out.println();
 
         } else if (start > end){
             for (char c = start; c>= end; c--) {
@@ -64,7 +66,13 @@ public class Challenge {
      * @return an array containing the middle item(s)
      */
     public String[] findMiddleItems(String[] array) {
-        return new String[] {};
+        if (array.length % 2 == 0){
+            int middleItem = array.length / 2;
+            return new String[]{array[middleItem -1],array[middleItem]};
+        }else {
+            return new String[]{array[array.length / 2]};
+        }
+
     }
 
     /***
@@ -76,6 +84,8 @@ public class Challenge {
      *         arrays
      */
     public int[] mergeSortedArrays(int[] array1, int[] array2) {
+//        int[] newArray = array1 + array2;
+//        Object[] bothArr = ArrayUtils.addAll(array1, array2);
         return new int[] {};
     }
 
