@@ -16,5 +16,7 @@ public class RectangleDemo {
         System.out.println(r1.area());
         System.out.println(r2.area());
         System.out.println(r3.area());
+
+        System.out.println(r1.perimeter());
     }
 }

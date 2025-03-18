@@ -31,7 +31,13 @@ public class Rectangle {
     public double area(){
         return length * width;
     }
+    public double perimeter(){
+        return 2 * length + 2 * width;
+    }
+
     public static int getNumRectangles(){
         return numRectangles;
     }
+
+
 }
